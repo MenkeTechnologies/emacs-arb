@@ -34,7 +34,7 @@ Emacs major mode (`arb-mode`) for **arb**, the pipe-native TUI/web dashboard lan
 - **eldoc + completion** — one-line signatures and `completion-at-point` for arb verbs and widgets.
 - **Language server** — `arb --lsp` via **eglot** (built in since Emacs 29) and **lsp-mode**.
 
-arb's builtin surface (inputs, directives, widgets, and query verbs) is small and fixed by the language, so the keyword lists are plain `regexp-opt` lists in `arb-mode.el` — no generated hash-table stdlib is needed (that machinery only exists in the sibling `emacs-stryke` because stryke's ~10,450 builtins overflow Emacs' regexp compiler). Verb / widget signatures for eldoc / completion live in `arb-stdlib.el`, authored from arb's own LSP completion corpus.
+arb's builtin surface (inputs, directives, widgets, and query verbs) is small and fixed by the language, so the keyword lists are plain `regexp-opt` lists in `arb-mode.el` — no generated hash-table stdlib is needed (that machinery only exists in the sibling `emacs-stryke` because stryke's ~10,493 builtins overflow Emacs' regexp compiler). Verb / widget signatures for eldoc / completion live in `arb-stdlib.el`, authored from arb's own LSP completion corpus.
 
 `arb --lsp` is launched with **only** `--lsp` — an appended `--stdio` is rejected by the binary, so neither client is configured to add one.
 
