@@ -17,7 +17,7 @@
 
 > *"Open a `.arb`. Widgets, query verbs, and the whole pipeline spec light up."*
 
-Emacs major mode (`arb-mode`) for **arb**, the pipe-native TUI/web dashboard language on **[fusevm](https://github.com/MenkeTechnologies/fusevm)/JIT** — pipe a stream in and **[arb](https://github.com/MenkeTechnologies/arb)** builds a dynamic ratatui TUI or a served web page from a declarative, Tcl/Tk-flavored spec (a jq/xpath/css/yq superset). Font-lock for keywords, input sources, directives, widget verbs, ~130 query verbs, widget paths, `-flags`, and `/regex/` literals; filetype detection; brace-aware indentation; run a buffer through `arb`; eldoc + completion for verbs and widgets; and LSP via `arb --lsp` (eglot + lsp-mode).
+Emacs major mode (`arb-mode`) for **arb**, the pipe-native TUI/web dashboard language on **[fusevm](https://github.com/MenkeTechnologies/fusevm)/JIT** — pipe a stream in and **[arb](https://github.com/MenkeTechnologies/arb)** builds a dynamic ratatui TUI or a served web page from a declarative, Tcl/Tk-flavored spec (a jq/xpath/css/yq superset). Font-lock for keywords, input sources, directives, widget verbs, 154 query verbs, widget paths, `-flags`, and `/regex/` literals; filetype detection; brace-aware indentation; run a buffer through `arb`; eldoc + completion for verbs and widgets; and LSP via `arb --lsp` (eglot + lsp-mode).
 
 ### [`Read the Docs`](https://menketechnologies.github.io/emacs-arb/) &middot; [`Engineering Report`](https://menketechnologies.github.io/emacs-arb/report.html) · [`arb`](https://github.com/MenkeTechnologies/arb) · [`vim-arb`](https://github.com/MenkeTechnologies/vim-arb) · [`vscode-arb`](https://github.com/MenkeTechnologies/vscode-arb)
 
@@ -28,7 +28,7 @@ Emacs major mode (`arb-mode`) for **arb**, the pipe-native TUI/web dashboard lan
 **emacs-arb** is the Emacs major mode for **arb** (the `arb` engine). It provides:
 
 - **Filetype detection** — `*.arb` files (`auto-mode-alist`) and arb shebangs (`interpreter-mode-alist`).
-- **Syntax highlighting** — font-lock for arb keywords and constants, the 10 input sources (`in`, `in.json`, `in.csv`, …), the 9 directives (`source`, `bind`, `grid`, …), the 19 widget verbs (`text`, `table`, `gauge`, …), the ~130 query verbs (`field`, `where`, `tally`, `sma`, …), widget/control paths (`.a.b.c`), `-flags`, `/regex/` literals, single- and double-quoted strings, `#` comments, and numbers.
+- **Syntax highlighting** — font-lock for arb keywords and constants, the 10 input sources (`in`, `in.json`, `in.csv`, …), the 9 directives (`source`, `bind`, `grid`, …), the 19 widget verbs (`text`, `table`, `gauge`, …), the 154 query verbs (`field`, `where`, `tally`, `sma`, …), widget/control paths (`.a.b.c`), `-flags`, `/regex/` literals, single- and double-quoted strings, `#` comments, and numbers.
 - **Indentation** — brace-aware `indent-line-function`.
 - **Run** — `arb-run-buffer` (`C-c C-c`) runs the buffer's spec through `arb` via `compile`.
 - **eldoc + completion** — one-line signatures and `completion-at-point` for arb verbs and widgets.

@@ -59,11 +59,11 @@
 
       <h2 class="tutorial-title"><span class="step-hash">&gt;_</span>EXECUTIVE SUMMARY</h2>
       <p class="tutorial-subtitle"><strong>emacs-arb</strong> is the Emacs major mode for <strong>arb</strong> &mdash; a Tcl/Tk-flavored declarative language for visualizing and modifying Unix pipelines, on the fusevm bytecode VM + Cranelift JIT. <code>arb-mode</code> derives from <code>prog-mode</code> and provides font-lock, a syntax table, brace-aware indentation, filetype detection, a buffer runner (<code>arb FILE</code> via <code>compile</code>), eldoc + completion for the query verbs, and an LSP client that launches <code>arb --lsp</code>.</p>
-      <p class="tutorial-subtitle"><strong>Design principle:</strong> the highlighted surface is arb's actual language surface &mdash; keywords, the widgets, the query verbs, input sources, directives, dotted widget paths, and <code>/regex/</code> literals. Because arb has a finite corpus (a few hundred verbs / widgets / directives, unlike the sibling <strong>stryke</strong> with its ~10,450 generated builtins), the lists are plain <code>regexp-opt</code> alternations in <code>arb-mode.el</code>; no generated hash-table stdlib is required.</p>
+      <p class="tutorial-subtitle"><strong>Design principle:</strong> the highlighted surface is arb's actual language surface &mdash; keywords, the widgets, the query verbs, input sources, directives, dotted widget paths, and <code>/regex/</code> literals. Because arb has a finite corpus (a few hundred verbs / widgets / directives, unlike the sibling <strong>stryke</strong> with its ~10,493 generated builtins), the lists are plain <code>regexp-opt</code> alternations in <code>arb-mode.el</code>; no generated hash-table stdlib is required.</p>
 
       <div class="stat-grid">
-        <div class="stat-card"><div class="stat-val">18</div><div class="stat-label">Widgets</div></div>
-        <div class="stat-card"><div class="stat-val accent">130+</div><div class="stat-label">Query verbs</div></div>
+        <div class="stat-card"><div class="stat-val">19</div><div class="stat-label">Widgets</div></div>
+        <div class="stat-card"><div class="stat-val accent">154</div><div class="stat-label">Query verbs</div></div>
         <div class="stat-card"><div class="stat-val">10</div><div class="stat-label">Input sources</div></div>
         <div class="stat-card"><div class="stat-val accent">.a.b</div><div class="stat-label">Widget paths</div></div>
         <div class="stat-card"><div class="stat-val green">2</div><div class="stat-label">LSP clients (eglot + lsp-mode)</div></div>
@@ -74,7 +74,7 @@
 
       <hr class="section-rule">
       <h2 class="tutorial-title"><span class="step-hash">~</span>WHY NO GENERATED STDLIB</h2>
-      <p class="tutorial-subtitle">The sibling <code>emacs-stryke</code> generates a 170&nbsp;KB <code>stryke-stdlib.el</code> of hash tables because a single <code>regexp-opt</code> over stryke's ~10,493 builtins overflows Emacs' regexp compiler (<code>invalid-regexp "Regular expression too big"</code>). arb has no such problem: its corpus &mdash; the widgets, ~130 query verbs, input sources, directives, and keywords &mdash; is comfortably within the regexp-size limit. So <code>arb-mode.el</code> uses plain <code>regexp-opt</code> alternations, and <code>arb-stdlib.el</code> holds the query-verb / widget signatures used for eldoc and <code>completion-at-point</code>. Dotted widget paths (<code>.codes</code>) and <code>/regex/</code> literals (which division <code>a / b</code> must not be mistaken for) are matched with a dedicated regexp and a <code>syntax-propertize</code> rule that only fires in operand position.</p>
+      <p class="tutorial-subtitle">The sibling <code>emacs-stryke</code> generates a 170&nbsp;KB <code>stryke-stdlib.el</code> of hash tables because a single <code>regexp-opt</code> over stryke's ~10,493 builtins overflows Emacs' regexp compiler (<code>invalid-regexp "Regular expression too big"</code>). arb has no such problem: its corpus &mdash; the widgets, 154 query verbs, input sources, directives, and keywords &mdash; is comfortably within the regexp-size limit. So <code>arb-mode.el</code> uses plain <code>regexp-opt</code> alternations, and <code>arb-stdlib.el</code> holds the query-verb / widget signatures used for eldoc and <code>completion-at-point</code>. Dotted widget paths (<code>.codes</code>) and <code>/regex/</code> literals (which division <code>a / b</code> must not be mistaken for) are matched with a dedicated regexp and a <code>syntax-propertize</code> rule that only fires in operand position.</p>
 
       <table class="parity-table">
         <thead><tr><th>Component</th><th>Detail</th></tr></thead>

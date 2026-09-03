@@ -20,7 +20,7 @@
 ;;
 ;;   - filetype detection for `*.arb' files and arb shebangs
 ;;   - syntax highlighting: keywords, input sources, directives, widget
-;;     verbs, ~130 query verbs, widget paths (.a.b.c), `-flags',
+;;     verbs, 154 query verbs, widget paths (.a.b.c), `-flags',
 ;;     /regex/ literals, single- and double-quoted strings, numbers,
 ;;     `#' comments
 ;;   - brace-aware indentation

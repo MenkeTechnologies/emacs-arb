@@ -13,7 +13,7 @@
 ;;; Commentary:
 
 ;; Verb / widget metadata for `arb-mode'.  arb's builtin surface — input
-;; sources, ~130 query verbs, widget verbs, and directives — is small and
+;; sources, 154 query verbs, widget verbs, and directives — is small and
 ;; fixed by the language, so it is authored here by hand rather than
 ;; generated.  The one-line synopses mirror the descriptions arb ships in
 ;; its own LSP completion corpus.  This table powers:
